@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: uni-shop-backend
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${uni-shop.mysql.url}
+    username: ${uni-shop.mysql.username}
+    password: ${uni-shop.mysql.password}
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    # 打印sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+uni-shop:
+  alioss:
+    endpoint: ${uni-shop.alioss.endpoint}
+    access-key-id: ${uni-shop.alioss.access-key-id}
+    access-key-secret: ${uni-shop.alioss.access-key-secret}
+    bucket-name: ${uni-shop.alioss.bucket-name}
+
+
